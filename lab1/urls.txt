@@ -16,6 +16,9 @@
    c#
 
 5) py https://onlinegdb.com/xT8QrJaLL
+
    c#
 
-6)
+6) py https://onlinegdb.com/jsGYVqQTyz
+   
+7)
