@@ -156,3 +156,44 @@ if choiceFigure <= 4:
             print("Программа остановлена")
 else:
     print("Введено некорректное значение")
+
+C#
+1
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{	
+		int second = 0;
+		int minute = 0;
+		int hour = 0;
+		
+		double input = Convert.ToDouble(Console.ReadLine());
+		
+		if (input >= 0 && input <= 86400)
+		{
+			hour = Convert.ToInt32(input / 3600);
+			minute = Convert.ToInt32(input / 60 - hour * 60);
+			second = Convert.ToInt32(input - (3600 * hour + 60 * minute));
+			
+			if (minute < 10)
+			{
+				Convert.ToString(minute);
+				minute = '0' + minute;
+			}	
+			
+			if (second < 10)
+			{
+				Convert.ToString(second);
+				minute = '0' + second;
+			}
+			
+			Console.WriteLine("\n" + "Результат: " + hour + ':' + minute + ':' + second);
+		}
+		else
+		{
+			Console.WriteLine("\n" + "Введено некорректное число");
+		}
+	}
+}
