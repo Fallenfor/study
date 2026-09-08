@@ -1,0 +1,158 @@
+1
+n = 0
+second = 0
+minute = 0
+hour = 0
+
+n = int(input("Введите количество секунд меньше 24 часов в целочисленном типе и положительном значении: "))
+
+print("\n" + f"Введенное число: {n}") 
+
+if n >= 0 and n <= 24 * 3600:
+    
+    hour = int(n / 3600)
+    minute = int(n / 60 - hour * 60)
+    second = n - (3600 * hour + 60 * minute)
+    
+    if minute < 10:
+        minute = '0' + str(minute)
+    
+    if second < 10:
+        second = '0' + str(second)
+        
+    print("\n" + f"Результат: {hour}:{minute}:{second}") 
+else:
+    print("\n" + "Введено некорректное число")
+    
+
+
+2
+arithmetic = float(0)
+geometric = float(0)
+a = float(input("Введите значение a: "))
+b = float(input("Введите значение b: "))
+c = float(input("Введите значение c: "))
+n = 3
+
+print("\n" + f"Введенные значения: a: {a}, b: {b}, c: {c}")
+
+arithmetic = (a + b + c) / n
+
+if a >= 0 and b >= 0 and c >= 0:
+    geometric = (a * b * c) ** (1 / n)
+    print("\n" + f"Среднее арифметическое: {arithmetic}, Среднее геометрическое: {geometric}")
+else:
+    print("\n" + f"Среднее арифметическое: {arithmetic}")
+
+
+
+3
+x = int(5)
+y = int(10)
+
+print(f"Значения переменных: x: {x}, y: {y}" + "\n")
+
+y = y + x
+
+x = y - x
+
+y = y - x
+
+print(f"До смены: x: {y}, y: {x}" + "\n")
+print(f"После смены: x: {x}, y: {y}")
+
+4
+a = float(input("Введите значение коэффициента a: "))
+b = float(input("Введите значение коэффициента b: "))
+c = float(input("Введите значение коэффициента c: "))
+d = float(0)
+rootOne = float(0)
+rootTwo = float(0)
+
+d = b ** 2 - 4 * a * c
+
+if d < 0:
+    print("\n" + "Действительных корней нет")
+    
+if d == 0:
+    rootOne = -b / 2 * a
+    print("\n" + f"Уравнение имеет один действительный корень: {rootOne}")
+
+if d > 0:
+    rootOne = -b + (d ** (1/2))
+    rootTwo = -b - (d ** (1/2))
+    print("\n" + f"Уравнение имеет два действительных корня: x1: {rootOne}, x2: {rootTwo}")
+
+5
+year = int(input("Введите год: "))
+
+if year > 0 and year % 4 == 0 and year % 100 != 0:
+    print("\n" + "Введенный год является високосным")
+else:
+    if year > 0 and year % 400 == 0:
+        print("\n" + "Введенный год является високосным")
+    else:
+        print("\n" + "Введенный год не является високосным")
+            
+
+6
+numberOne = float(input("Введите первое число: "))
+numberTwo = float(input("Введите второе число: "))
+numberThree = float(input("Введите третье число: "))
+max_val = float(0)
+
+max_val = numberOne if numberOne >= numberTwo and numberOne >= numberThree else (numberTwo if numberTwo >= numberOne and numberTwo >= numberThree else numberThree)
+
+print(f"Наибольшее значение: {max_val}")
+
+8
+radius = 0
+side = 0
+base = 0
+height = 0
+choiceFigure = int(input("Выберите фигуру: 1 - круг, 2 - квадрат, 3 - треугольник, 4 - выход" + "\n"))
+choiceAction = int(input("Хотите ли вы посчитать площадь данной фигуры?" + "\n" + "0 - нет, 1 - да" + "\n"))
+
+if choiceFigure <= 4:
+    match choiceFigure:
+        case 1:
+            match choiceAction:
+                case 0:
+                    radius = float(input("Введите радиус круга: " + "\n"))
+                    print(f"Радиус круга: {radius}")
+                    
+                case 1:
+                    radius = float(input("Введите радиус круга: " + "\n"))
+                    print(f"Радиус круга: {radius}" + "\n")
+                    print(f"Площадь круга: {(radius ** 2) * 3.14}")
+            
+        case 2:
+            match choiceAction:
+                case 0:
+                    side = float(input("Введите сторону квадрата: "))
+                    print(f"Сторона квадрата: {side}")
+                    
+                case 1:
+                    side = float(input("Введите сторону квадрата: "))
+                    print(f"Сторона квадрата: {side}")
+                    print(f"Площадь квадрата: {side ** 2}")
+            
+        case 3:
+            match choiceAction:
+                case 0:
+                    base = float(input("Введите основание треугольника: "))
+                    height = float(input("Введите высоту треугольника: "))
+                    print(f"Основание треугольника:: {base}")
+                    print(f"Высота треугольника:: {height}")
+                    
+                case 1:
+                    base = float(input("Введите основание треугольника: "))
+                    height = float(input("Введите высоту треугольника: "))
+                    print(f"Основание треугольника:: {base}")
+                    print(f"Высота треугольника:: {height}")
+                    print(f"Площадь треугольника: {base * height / 2}")
+            
+        case 4:
+            print("Программа остановлена")
+else:
+    print("Введено некорректное значение")
