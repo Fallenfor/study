@@ -117,3 +117,29 @@ public class Task4
         }
     }
 }
+
+using System;
+public class Task5 
+{
+    public static void Main() 
+    {
+        Console.WriteLine("Введите год:");
+        int year = Convert.ToInt32(Console.ReadLine());
+
+        if (year > 0 && year % 4 == 0 && year % 100 != 0)
+        {
+            Console.WriteLine("\n" + "Введенный год является високосным");
+        }
+        else
+        {
+            if (year > 0 && year % 400 == 0)
+            {
+                Console.WriteLine("\n" + "Введенный год является високосным");
+            }
+            else
+            {
+                Console.WriteLine("\n" + "Введенный год не является високосным");
+            }
+        }
+    }
+}
