@@ -1,10 +1,7 @@
 Кабанов Михаил
 
-1
-
-using System;
-					
-public class Program
+using System;				
+public class Task1
 {
 	public static void Main()
 	{	
@@ -41,11 +38,8 @@ public class Program
 	}
 }
 
-2
-
-using System;
-					
-public class Program
+using System;				
+public class Task2
 {
 	public static void Main()
 	{	
@@ -71,11 +65,8 @@ public class Program
 	}
 }
 
-3
-
-using System;
-					
-public class Program
+using System;			
+public class Task3
 {
 	public static void Main()
 	{	
@@ -89,4 +80,40 @@ public class Program
 		Console.WriteLine("До смены: x: " + y + ", y: " + x + "\n");
 		Console.WriteLine("После смены: x: " + x + ", y: " + y);
 	}
+}
+
+using System;
+class Task4 
+{
+    public static void Main() 
+    {
+        
+        Console.WriteLine("Введите значение коэффициента a:");
+        double a = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите значение коэффициента b:");
+        double b = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите значение коэффициента c:");
+        double c = Convert.ToDouble(Console.ReadLine());
+        double d = b * b - 4 * a * c;
+        double rootOne = 0;
+        double rootTwo = 0;
+        
+        if (d < 0)
+        {
+            Console.WriteLine("\n" + "Действительных корней нет");
+        } 
+        
+        if (d == 0)
+        {
+            rootOne = -b / 2 * a;
+            Console.WriteLine("\n" + "Уравнение имеет один действительный корень: " + rootOne);
+        }
+        
+        if (d > 0)
+        {
+            rootOne = -b + Math.Sqrt(d);
+            rootTwo = -b - Math.Sqrt(d);
+            Console.WriteLine("\n" + "Уравнение имеет два действительных корня:" + "\n" + "x1: " + rootOne + "\n" + "x2: " + rootTwo);
+        }
+    }
 }
