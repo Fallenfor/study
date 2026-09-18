@@ -1,9 +1,9 @@
 Кабанов Михаил
 
 using System;				
-public class Task1
+class Task1
 {
-	public static void Main()
+	static void Main()
 	{	
 		int second = 0;
 		int minute = 0;
@@ -40,9 +40,9 @@ public class Task1
 }
 
 using System;				
-public class Task2
+class Task2
 {
-	public static void Main()
+	static void Main()
 	{	
 		double n = 3;
 		double arithmetic = 0; 
@@ -70,9 +70,9 @@ public class Task2
 }
 
 using System;			
-public class Task3
+class Task3
 {
-	public static void Main()
+	static void Main()
 	{	
 		int x = 5;
 		int y = 10;
@@ -87,9 +87,9 @@ public class Task3
 }
 
 using System;
-public class Task4 
+class Task4 
 {
-    public static void Main() 
+    static void Main() 
     {
         
         Console.WriteLine("Введите значение коэффициента a:");
@@ -123,9 +123,9 @@ public class Task4
 }
 
 using System;
-public class Task5 
+class Task5 
 {
-    public static void Main() 
+    static void Main() 
     {
         Console.WriteLine("Введите год:");
         int year = Convert.ToInt32(Console.ReadLine());
@@ -148,5 +148,35 @@ public class Task5
     }
 }
 
-Задание 7. Проверка диапазона (C#). Напишите программу, которая считывает целое число. Используя оператор is и паттерн matching (например, is >= 0 and <= 10), определите, входит ли число 
-в один из диапазонов: [0-10], [11-20] или [21-30]. Если число не попадает ни в один диапазон, выведите "Out of range". Запрещено использовать классические && в условиях, только паттерны.
+using System; 
+class Task7 
+{
+    static void Main() 
+    {
+        Console.WriteLine("Введите число целого типа:");
+        int input = Convert.ToInt32(Console.ReadLine());
+        
+        if (input is >= 0 and <= 30)
+        {
+            if (input is >= 0 and <= 10)
+            {
+                Console.WriteLine("Число входит в диапазон [0, 10]");
+            }
+            else 
+            {
+                if (input is >= 11 and <= 20)
+                {
+                    Console.WriteLine("Число входит в диапазон [11, 20]");    
+                }
+                else
+                {
+                    Console.WriteLine("Число входит в диапазон [21, 30]"); 
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("Out of range");
+        }
+    }
+}
