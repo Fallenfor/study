@@ -1,5 +1,6 @@
 Михаил Кабанов
 
+1)
 y = 0
 negative = 0
 
@@ -15,3 +16,28 @@ for x in range(-50,51,5):
         negative += 1
         
 print(f"Количество отрицательных значений функции: {negative}") 
+
+2)
+summaryeven = 0
+summarypositive = 0
+count = 0
+countpositive = 0
+
+n = -1
+
+while n != 0:
+    n = float(input("Введите значение: "))
+    if n != 0:
+        count += 1
+    
+    if n % 2 == 0:
+        summaryeven += n
+    
+    if n > 0:
+        countpositive += 1
+        summarypositive += n
+
+if summarypositive > 0:    
+    print(f"Количество введеных значений: {count}, сумма всех четных значений: {summaryeven}, среднее арифметическое положительных значений: {summarypositive / countpositive}")
+else:
+    print(f"Количество введеных значений: {count}, сумма всех четных значений: {summaryeven}, среднее арифметическое положительных значений не вычислено в связи с отсутствием положительных значений")
