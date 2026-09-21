@@ -41,3 +41,22 @@ if summarypositive > 0:
     print(f"Количество введеных значений: {count}, сумма всех четных значений: {summaryeven}, среднее арифметическое положительных значений: {summarypositive / countpositive}")
 else:
     print(f"Количество введеных значений: {count}, сумма всех четных значений: {summaryeven}, среднее арифметическое положительных значений не вычислено в связи с отсутствием положительных значений")
+
+3)
+count = 0
+N = int(input("Введите натуральное значение: "))
+
+if N > 0:
+    for i in range(2, N):
+        if N % i == 0:
+            is_prime = True
+            for j in range(2, i):
+                if i % j == 0:
+                    is_prime = False
+            if is_prime:
+                count += 1
+                print(f"Простой делитель найден: {i}")
+else:
+    print("Введенное значение не является натуральным")
+
+print(f"Количество простых делителей: {count}")
