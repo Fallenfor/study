@@ -72,31 +72,43 @@ for i in range(1,11):
         vector += f"\n{i, j, manualMult}"
 print(vector)
 
-НЕДОДЕЛАНО
 5)
 number = int(input("Введите натуральное значение: "))
-digitCopy = 0
-digitalSquare = 0
-numberLength = 1
 
-if number % 10 == number:
-    print(number)
-else:
+while number >= 10:          
+    digitalSquare = 0          
+    numberLength = 1
+    temp = number
+    
     while number % (10 ** numberLength) != number:
         numberLength += 1
+
+    for i in range(numberLength - 1, -1, -1):
+        digit = number // (10 ** i)
+        digitalSquare += digit
+        number -= digit * (10 ** i)
     
-    for i in range(numberLength - 1, 0, -1):
-        digitalSquare += number // (10 ** i)
-        digitCopy = number % (10 ** i)
-        number -= digitCopy * (10 ** i)
-print(digitalSquare)
+    number = digitalSquare    
 
-ЗАДАЧИ ТОЛЬКО ДЛЯ PYTHON 3 шт
-Задача 5 (for + range). Цифровой корень числа.
-Дано натуральное число. Найти его цифровой корень (рекурсивное сложение цифр до однозначного числа). Запрещено преобразовывать число в строку - работаем только через деление на 10 и взятие остатка.
+print(f"Цифровой корень введеного значения: {number}")
 
-Задача 6 (while). Угадай число с подсказками.
-Программа "загадывает" число от 1 до 100 (фиксированное в коде). Пользователь пытается угадать. После каждой попытки программа говорит "больше" или "меньше". Считать количество попыток. Если пользователь вводит 0 - досрочный выход. В конце вывести количество попыток или сообщение о выходе.
+6)
+number = 100
+guess = -1
+counter = 0
+
+while guess != number and guess != 0:
+    guess = int(input("Угадайте загаданное значение: "))
+    counter += 1
+
+    if guess == number:
+        print(f"Значение угадано!\nКоличество попыток: {counter}")
+    elif guess == 0:
+        print("Программа остановлена")
+    elif guess < number:
+        print("Загаданное значение больше введенного")
+    else:
+        print("Загаданное значение меньше введенного")
 
 Задача 7 (for + вложенный while). Проверка на "счастливый билет".
 Пользователь вводит шестизначное число. Проверить, является ли оно "счастливым" (сумма первых трех цифр равна сумме последних трех). Запрещено использовать строки и списки - только арифметические операции. Вывести True или False.
