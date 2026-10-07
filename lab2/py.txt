@@ -110,6 +110,30 @@ while guess != number and guess != 0:
     else:
         print("Загаданное значение меньше введенного")
 
-Задача 7 (for + вложенный while). Проверка на "счастливый билет".
-Пользователь вводит шестизначное число. Проверить, является ли оно "счастливым" (сумма первых трех цифр равна сумме последних трех). Запрещено использовать строки и списки - только арифметические операции. Вывести True или False.
+number = int(input("Введите шестизначное значение: "))
+temp = number
+firstHalf = 0
+secondHalf = 0
+power = 5
+
+7)
+if number >= 10 ** 5 and number < 10 ** 6
+    for i in range(6):
+        if i < 3:
+            while number >= 1000:
+                firstHalf += number // 10 ** power
+                number %= 10 ** power
+                power -= 1
+        else:
+            while number < 1000 and number > 0:
+                secondHalf += number // 10 ** power
+                number %= 10 ** power
+                power -= 1
+
+    if firstHalf == secondHalf:
+        print(f"{firstHalf} = {secondHalf}. Билет - удачный!")
+    else:
+        print(f"{firstHalf} != {secondHalf}. Билет - неудачный")
+else:
+    print("Введено некорректное значение")
 
