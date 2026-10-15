@@ -74,6 +74,32 @@ public class Program
 	}
 }
 
-Задача 9 (for). Числа Фибоначчи до N.
-Пользователь вводит N. Вывести все числа Фибоначчи, не превосходящие N, и их порядковые номера (начиная с 1). Например: 1: 1, 2: 1, 3: 2...
-Запрещено использовать массивы - хранить только два предыдущих значения.
+9)
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите до какого числа вывести ряд Фибоначчи: ");
+        int N = Convert.ToInt32(Console.ReadLine());
+
+        int previous = 0;  
+        int current = 1;  
+
+        if (N < 1)
+        {
+            Console.WriteLine("Чисел Фибоначчи, не превосходящих введенное число, нет.");
+            return;
+        }
+
+        for (int i = 1; current <= N; i++)
+        {
+            Console.WriteLine($"{i}: {current}");
+
+            int next = previous + current;
+            previous = current;
+            current = next;
+        }
+    }
+}
