@@ -1,4 +1,154 @@
 Михаил Кабанов
+1)
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double y = 0;
+        int negative = 0;
+
+        Console.WriteLine(" x       y");
+
+        for (double x = -5; x <= 5; x += 0.5)
+        {
+            y = x * x - 4 * x + 3;
+
+            if (x < 0)
+            {
+                Console.WriteLine($"{x}\t{y}");
+            }
+            else
+            {
+                Console.WriteLine($" {x}\t{y}");
+            }
+
+            if (y < 0)
+            {
+                negative++;
+            }
+        }
+
+        Console.WriteLine($"Количество отрицательных значений функции: {negative}");
+    }
+}
+
+2)
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double summaryeven = 0;
+        double summarypositive = 0;
+        int count = 0;
+        int countpositive = 0;
+
+        double n = -1;
+
+        while (n != 0)
+        {
+            Console.Write("Введите значение: ");
+            n = Convert.ToDouble(Console.ReadLine());
+
+            if (n != 0)
+            {
+                count++;
+            }
+
+            if (n % 2 == 0)
+            {
+                summaryeven += n;
+            }
+
+            if (n > 0)
+            {
+                countpositive++;
+                summarypositive += n;
+            }
+        }
+
+        if (summarypositive > 0)
+        {
+            Console.WriteLine($"Количество введеных значений: {count}, сумма всех четных значений: {summaryeven}, среднее арифметическое положительных значений: {summarypositive / countpositive}");
+        }
+        else
+        {
+            Console.WriteLine($"Количество введеных значений: {count}, сумма всех четных значений: {summaryeven}, среднее арифметическое положительных значений не вычислено в связи с отсутствием положительных значений");
+        }
+    }
+}
+
+3)
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int count = 0;
+
+        Console.Write("Введите натуральное значение: ");
+        int N = Convert.ToInt32(Console.ReadLine());
+
+        if (N > 0)
+        {
+            for (int i = 2; i < N; i++)
+            {
+                if (N % i == 0)
+                {
+                    bool is_prime = true;
+                    for (int j = 2; j < i; j++)
+                    {
+                        if (i % j == 0)
+                        {
+                            is_prime = false;
+                        }
+                    }
+
+                    if (is_prime)
+                    {
+                        count++;
+                        Console.WriteLine($"Простой делитель найден: {i}");
+                    }
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("Введенное значение не является натуральным");
+        }
+
+        Console.WriteLine($"Количество простых делителей: {count}");
+    }
+}
+
+4)
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int manualMult = 0;
+        
+        Console.WriteLine("i j Результат");
+        for (int i = 1; i <= 10; i++)
+        {
+            for (int j = 1; j <= 10; j++)
+            {
+                manualMult = 0;
+                for (int k = 0; k < i; k++)
+                {
+                    manualMult += j;
+                }
+                Console.WriteLine($"\n{i} {j} {manualMult}");
+            }
+        }
+    }
+}
 
 8)
 using System;
